@@ -22,7 +22,6 @@
   }
 
   * { margin:0; padding:0; box-sizing:border-box; }
-
   html { scroll-behavior: smooth; }
 
   body {
@@ -34,7 +33,6 @@
     min-height: 100vh;
   }
 
-  /* starfield */
   body::before {
     content:'';
     position:fixed; inset:0;
@@ -55,7 +53,7 @@
     z-index:0;
   }
 
-  /* ── NAV ── */
+  /* NAV */
   nav {
     position:fixed; top:0; left:0; right:0; z-index:100;
     padding:1rem 2.5rem;
@@ -64,7 +62,6 @@
     backdrop-filter:blur(16px);
     border-bottom:1px solid var(--border);
   }
-
   .nav-logo {
     font-family:'Press Start 2P',monospace;
     font-size:10px;
@@ -72,7 +69,6 @@
     text-shadow:0 0 20px var(--purple-glow);
     letter-spacing:1px;
   }
-
   nav a {
     color:var(--muted);
     text-decoration:none;
@@ -85,7 +81,7 @@
   }
   nav a:hover { color:var(--purple-bright); }
 
-  /* ── HERO ── */
+  /* HERO */
   .hero {
     position:relative;
     min-height:100vh;
@@ -98,15 +94,12 @@
     z-index:1;
     overflow:hidden;
   }
-
   .hero-img {
-    position:absolute;
-    inset:0;
+    position:absolute; inset:0;
     background:url('realms-bg.webp') center/cover no-repeat;
     opacity:0.22;
     z-index:-2;
   }
-
   .hero-overlay {
     position:absolute; inset:0; z-index:-1;
     background:
@@ -114,12 +107,9 @@
       radial-gradient(ellipse 80% 40% at 50% 100%, rgba(26,10,46,0.95) 0%, transparent 60%),
       linear-gradient(180deg, rgba(26,10,46,0.6) 0%, rgba(26,10,46,0.2) 40%, rgba(26,10,46,0.7) 100%);
   }
-
-  /* pink portal glow */
   .portal-glow {
     position:absolute;
-    bottom:30%;
-    left:50%;
+    bottom:30%; left:50%;
     transform:translateX(-50%);
     width:320px; height:120px;
     background:radial-gradient(ellipse, rgba(236,72,153,0.45) 0%, rgba(168,85,247,0.2) 50%, transparent 80%);
@@ -127,12 +117,10 @@
     z-index:-1;
     animation:portal-pulse 4s ease-in-out infinite;
   }
-
   @keyframes portal-pulse {
     0%,100%{ opacity:.7; transform:translateX(-50%) scaleX(1); }
     50%{ opacity:1; transform:translateX(-50%) scaleX(1.1); }
   }
-
   .hero-eyebrow {
     font-family:'Press Start 2P',monospace;
     font-size:8px;
@@ -142,12 +130,10 @@
     text-shadow:0 0 12px var(--pink-glow);
     animation:fade-in .6s ease both;
   }
-
   @keyframes fade-in {
     from { opacity:0; transform:translateY(12px); }
     to   { opacity:1; transform:translateY(0); }
   }
-
   .hero h1 {
     font-family:'Press Start 2P',monospace;
     font-size:clamp(20px,5vw,44px);
@@ -157,13 +143,11 @@
     margin-bottom:0.8rem;
     animation:fade-in .7s .1s ease both;
   }
-
   .hero h1 em {
     font-style:normal;
     color:var(--purple-bright);
     text-shadow:3px 3px 0 rgba(0,0,0,0.6), 0 0 40px rgba(168,85,247,0.8);
   }
-
   .hero-sub {
     font-size:18px;
     color:var(--muted);
@@ -173,8 +157,6 @@
     margin-bottom:3rem;
     animation:fade-in .8s .2s ease both;
   }
-
-  /* join button */
   .btn-join {
     display:inline-flex;
     align-items:center;
@@ -193,13 +175,11 @@
     animation:fade-in .9s .3s ease both;
     box-shadow:0 0 0 2px rgba(168,85,247,0.4), 0 8px 40px rgba(168,85,247,0.3);
   }
-
   .btn-join::before {
     content:'';
     position:absolute; inset:0;
     background:linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 60%);
   }
-
   .btn-join::after {
     content:'';
     position:absolute;
@@ -208,17 +188,13 @@
     background:linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
     transition:left .5s;
   }
-
   .btn-join:hover::after { left:150%; }
-
   .btn-join:hover {
     transform:translateY(-4px) scale(1.02);
     box-shadow:0 0 0 2px rgba(236,72,153,0.6), 0 16px 50px rgba(168,85,247,0.5), 0 0 60px rgba(236,72,153,0.3);
   }
-
   .btn-join svg { width:18px; height:18px; flex-shrink:0; }
 
-  /* stats */
   .hero-stats {
     display:flex;
     gap:4rem;
@@ -227,7 +203,6 @@
     border-top:1px solid var(--border);
     animation:fade-in 1s .4s ease both;
   }
-
   .stat-val {
     font-family:'Press Start 2P',monospace;
     font-size:14px;
@@ -235,7 +210,6 @@
     display:block;
     text-shadow:0 0 16px var(--purple-glow);
   }
-
   .stat-lbl {
     font-size:12px;
     color:var(--muted);
@@ -244,7 +218,6 @@
     margin-top:6px;
     display:block;
   }
-
   .scroll-hint {
     position:absolute;
     bottom:2rem; left:50%;
@@ -253,12 +226,10 @@
     color:var(--muted); font-size:11px; letter-spacing:2px;
     animation:bounce-down 2s ease-in-out infinite;
   }
-
   @keyframes bounce-down {
     0%,100%{ transform:translateX(-50%) translateY(0); }
     50%{ transform:translateX(-50%) translateY(8px); }
   }
-
   .chevron {
     width:18px; height:18px;
     border-right:2px solid var(--purple-bright);
@@ -266,14 +237,13 @@
     transform:rotate(45deg);
   }
 
-  /* ── SECTION ── */
+  /* SECTION */
   .section-wrap {
     position:relative; z-index:1;
     max-width:1100px;
     margin:0 auto;
     padding:5rem 2rem;
   }
-
   .section-label {
     font-family:'Press Start 2P',monospace;
     font-size:7px;
@@ -283,7 +253,6 @@
     display:block;
     margin-bottom:.9rem;
   }
-
   .section-title {
     font-family:'Press Start 2P',monospace;
     font-size:clamp(13px,2.2vw,20px);
@@ -291,7 +260,6 @@
     line-height:1.6;
     margin-bottom:.8rem;
   }
-
   .section-desc {
     color:var(--muted);
     font-size:16px;
@@ -300,13 +268,12 @@
     margin-bottom:3rem;
   }
 
-  /* ── MOD CARDS ── */
+  /* MOD CARDS */
   .mods-grid {
     display:grid;
     grid-template-columns:repeat(auto-fit, minmax(340px,1fr));
     gap:2rem;
   }
-
   .mod-card {
     background:var(--surface);
     border:1px solid var(--border);
@@ -318,14 +285,12 @@
     backdrop-filter:blur(12px);
     transition:transform .3s, box-shadow .3s, border-color .3s;
   }
-
   .mod-card::before {
     content:'';
     position:absolute; inset:0;
     background:linear-gradient(145deg, rgba(168,85,247,0.08) 0%, transparent 50%);
     pointer-events:none;
   }
-
   .mod-card:hover {
     transform:translateY(-8px);
     border-color:rgba(168,85,247,0.6);
@@ -333,32 +298,25 @@
                0 0 40px rgba(168,85,247,0.2),
                0 0 80px rgba(236,72,153,0.1);
   }
-
-  /* top accent line */
   .mod-card-accent {
     height:3px;
     background:linear-gradient(90deg, var(--purple-bright), var(--pink));
   }
-
   .mod-img-wrap {
     position:relative;
     height:210px;
     overflow:hidden;
   }
-
   .mod-img-wrap img {
     width:100%; height:100%;
     object-fit:cover;
     transition:transform .4s, filter .4s;
     filter:saturate(.9) brightness(.9);
   }
-
   .mod-card:hover .mod-img-wrap img {
     transform:scale(1.04);
     filter:saturate(1.1) brightness(1);
   }
-
-  /* overlay gradient on image */
   .mod-img-wrap::after {
     content:'';
     position:absolute;
@@ -367,14 +325,12 @@
     background:linear-gradient(transparent, var(--surface));
     pointer-events:none;
   }
-
   .mod-body {
     padding:1.5rem 1.75rem 1.75rem;
     flex:1;
     display:flex;
     flex-direction:column;
   }
-
   .mod-badge {
     font-family:'Press Start 2P',monospace;
     font-size:7px;
@@ -387,7 +343,6 @@
     letter-spacing:1px;
     margin-bottom:1rem;
   }
-
   .mod-name {
     font-family:'Press Start 2P',monospace;
     font-size:12px;
@@ -396,7 +351,6 @@
     margin-bottom:1rem;
     text-shadow:0 0 20px rgba(168,85,247,0.4);
   }
-
   .mod-desc {
     color:var(--muted);
     font-size:15px;
@@ -404,8 +358,6 @@
     flex:1;
     margin-bottom:1.25rem;
   }
-
-  /* bullet highlights */
   .mod-highlights {
     list-style:none;
     margin-bottom:1.5rem;
@@ -413,7 +365,6 @@
     flex-direction:column;
     gap:6px;
   }
-
   .mod-highlights li {
     display:flex;
     align-items:flex-start;
@@ -422,14 +373,12 @@
     color:var(--muted);
     line-height:1.4;
   }
-
   .mod-highlights li::before {
     content:'▸';
     color:var(--purple-bright);
     flex-shrink:0;
     margin-top:1px;
   }
-
   .btn-guide {
     display:inline-flex;
     align-items:center;
@@ -446,17 +395,15 @@
     transition:all .2s;
     align-self:flex-start;
   }
-
   .btn-guide:hover {
     background:rgba(168,85,247,0.2);
     border-color:var(--purple-bright);
     box-shadow:0 0 20px rgba(168,85,247,0.3);
     gap:14px;
   }
-
   .btn-guide svg { width:13px; height:13px; flex-shrink:0; }
 
-  /* ── DIVIDER ── */
+  /* DIVIDER */
   .hr {
     border:none;
     height:1px;
@@ -465,21 +412,18 @@
     margin:0 auto;
   }
 
-  /* ── RULES ── */
+  /* RULES */
   .rules-wrap {
     position:relative; z-index:1;
     max-width:1100px;
     margin:0 auto;
     padding:5rem 2rem;
   }
-
   .rules-grid {
     display:grid;
     grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
     gap:1.5rem;
-    margin-top:0;
   }
-
   .rule-card {
     background:var(--surface);
     border:1px solid var(--border);
@@ -494,20 +438,17 @@
     backdrop-filter:blur(12px);
     transition:transform .3s, box-shadow .3s, border-color .3s;
   }
-
   .rule-card::before {
     content:'';
     position:absolute; inset:0;
     background:linear-gradient(145deg, rgba(236,72,153,0.06) 0%, transparent 55%);
     pointer-events:none;
   }
-
   .rule-card:hover {
     transform:translateY(-5px);
     border-color:rgba(236,72,153,0.5);
     box-shadow:0 16px 48px rgba(0,0,0,0.4), 0 0 30px rgba(236,72,153,0.12);
   }
-
   .rule-icon {
     width:48px; height:48px;
     border-radius:8px;
@@ -517,33 +458,28 @@
     font-size:22px;
     flex-shrink:0;
   }
-
   .rule-num {
     font-family:'Press Start 2P',monospace;
     font-size:7px;
     color:var(--pink);
     letter-spacing:2px;
   }
-
   .rule-title {
     font-family:'Press Start 2P',monospace;
     font-size:10px;
     color:#fff;
     line-height:1.6;
   }
-
   .rule-desc {
     color:var(--muted);
     font-size:15px;
     line-height:1.65;
   }
-
   .rule-divider {
     width:32px; height:2px;
     background:linear-gradient(90deg, var(--pink), var(--purple-bright));
     border-radius:2px;
   }
-
   .rules-banner {
     margin-top:2.5rem;
     background:rgba(236,72,153,0.08);
@@ -557,17 +493,10 @@
     color:var(--muted);
     line-height:1.5;
   }
+  .rules-banner-icon { font-size:22px; flex-shrink:0; }
+  .rules-banner strong { color:var(--pink); }
 
-  .rules-banner-icon {
-    font-size:22px;
-    flex-shrink:0;
-  }
-
-  .rules-banner strong {
-    color:var(--pink);
-  }
-
-  /* ── FOOTER ── */
+  /* FOOTER */
   footer {
     position:relative; z-index:1;
     text-align:center;
@@ -577,7 +506,6 @@
     letter-spacing:1px;
     border-top:1px solid var(--border);
   }
-
   .footer-logo {
     font-family:'Press Start 2P',monospace;
     font-size:9px;
@@ -585,7 +513,7 @@
     text-shadow:0 0 16px var(--purple-glow);
   }
 
-  /* ── RESPONSIVE ── */
+  /* RESPONSIVE */
   @media(max-width:640px) {
     nav .links { display:none; }
     .hero-stats { gap:2rem; }
@@ -631,7 +559,7 @@
       <span class="stat-lbl">Edición</span>
     </div>
     <div>
-      <span class="stat-val">2</span>
+      <span class="stat-val">6</span>
       <span class="stat-lbl">Mods activos</span>
     </div>
     <div>
@@ -710,6 +638,118 @@
       </div>
     </div>
 
+    <!-- Actions & Stuff -->
+    <div class="mod-card">
+      <div class="mod-card-accent"></div>
+      <div class="mod-img-wrap">
+        <img src="https://images.chunk.gg/products/oreville/actions-and-stuff/thumbnail-fdd8e12004321fe2-800.jpg" alt="Actions &amp; Stuff" loading="lazy">
+      </div>
+      <div class="mod-body">
+        <span class="mod-badge">RESOURCE PACK</span>
+        <h3 class="mod-name">Actions &amp; Stuff</h3>
+        <p class="mod-desc">
+          Pack de recursos oficial del Marketplace creado por <strong style="color:var(--purple-bright)">Oreville Studios</strong> que transforma las animaciones rígidas del juego en movimientos suaves y realistas para jugadores, criaturas y objetos, con una revisión visual completa y fiel al estilo vanilla.
+        </p>
+        <ul class="mod-highlights">
+          <li>Animaciones de jugador en 1.ª y 3.ª persona totalmente renovadas</li>
+          <li>Movimientos de mobs mejorados: ataques, expresiones y poses idle</li>
+          <li>Modelos 3D para herramientas, armas y armaduras</li>
+          <li>Revisión completa de texturas compatible con otros packs</li>
+        </ul>
+        <a href="https://guides.orevillestudios.com/actions-and-stuff" target="_blank" class="btn-guide">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+            <polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
+          </svg>
+          Ver guía oficial →
+        </a>
+      </div>
+    </div>
+
+    <!-- Furnaces & Chests -->
+    <div class="mod-card">
+      <div class="mod-card-accent"></div>
+      <div class="mod-img-wrap">
+        <img src="https://images.chunk.gg/products/vatonage/furnaces-and-chests/thumbnail-a758dc3f2da95ff1-800.jpg" alt="Furnaces &amp; Chests Add-On" loading="lazy">
+      </div>
+      <div class="mod-body">
+        <span class="mod-badge">ADD-ON OFICIAL</span>
+        <h3 class="mod-name">Furnaces &amp; Chests</h3>
+        <p class="mod-desc">
+          Add-on oficial del Marketplace creado por <strong style="color:var(--purple-bright)">Vatonage</strong> que mejora los hornos y cofres vanilla con versiones más potentes y eficientes, pensadas para expandir la supervivencia sin alejarse del estilo original del juego.
+        </p>
+        <ul class="mod-highlights">
+          <li>Hornos mejorados con mayor velocidad de fundición por niveles</li>
+          <li>Cofres con mayor capacidad de almacenamiento</li>
+          <li>Funciones útiles de utilidad y redstone integradas</li>
+          <li>Diseñado para complementar la experiencia vanilla sin romperla</li>
+        </ul>
+        <a href="https://chunk.gg/en/@vatonage/furnaces-and-chests" target="_blank" class="btn-guide">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+            <polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
+          </svg>
+          Ver en Marketplace →
+        </a>
+      </div>
+    </div>
+
+    <!-- Naturalist Add-On -->
+    <div class="mod-card">
+      <div class="mod-card-accent"></div>
+      <div class="mod-img-wrap">
+        <img src="https://images.chunk.gg/products/starfish-studios/naturalist/thumbnail-ae0484c1dbd916ae-640.jpg" alt="Naturalist Add-On" loading="lazy">
+      </div>
+      <div class="mod-body">
+        <span class="mod-badge">ADD-ON OFICIAL</span>
+        <h3 class="mod-name">Naturalist Add-On</h3>
+        <p class="mod-desc">
+          Add-on oficial del Marketplace creado por <strong style="color:var(--purple-bright)">Starfish Studios</strong> que añade más de 200 animales y crías con diseños originales y animaciones únicas, cubriendo mamíferos, aves, reptiles, insectos y vida marina en sus biomas naturales.
+        </p>
+        <ul class="mod-highlights">
+          <li>+200 animales y crías con animaciones únicas por especie</li>
+          <li>IA avanzada: caza, huida, sueño y comportamientos naturales</li>
+          <li>Sistemas de domesticación, cría y monta integrados</li>
+          <li>Spawn natural en bosques, desiertos, océanos y más biomas</li>
+        </ul>
+        <a href="https://chunk.gg/en/@starfish-studios/naturalist" target="_blank" class="btn-guide">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+            <polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
+          </svg>
+          Ver en Marketplace →
+        </a>
+      </div>
+    </div>
+
+    <!-- Doors Add-On -->
+    <div class="mod-card">
+      <div class="mod-card-accent"></div>
+      <div class="mod-img-wrap">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXhPKbcqwA9Dk1jfTzkhAvqft8vn5FwnMh_xXg-r44cQ&s=10" alt="Doors Add-On" loading="lazy">
+      </div>
+      <div class="mod-body">
+        <span class="mod-badge">ADD-ON OFICIAL</span>
+        <h3 class="mod-name">Doors Add-On</h3>
+        <p class="mod-desc">
+          Add-on oficial del Marketplace creado por <strong style="color:var(--purple-bright)">4KS Studios</strong> que expande drásticamente las opciones de puertas y entradas en Bedrock Edition, añadiendo nuevos materiales, tamaños y mecanismos inspirados en construcciones reales.
+        </p>
+        <ul class="mod-highlights">
+          <li>Decenas de puertas nuevas en madera, hierro, piedra y más</li>
+          <li>Puertas dobles, corredizas y de distintos tamaños</li>
+          <li>Compatibilidad con redstone para automatización</li>
+          <li>Diseño fiel al estilo vanilla sin romper la estética del juego</li>
+        </ul>
+        <a href="https://chunk.gg/@4ks-studios/doors" target="_blank" class="btn-guide">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+            <polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
+          </svg>
+          Ver en Marketplace →
+        </a>
+      </div>
+    </div>
+
   </div>
 </div>
 
@@ -761,4 +801,4 @@
 </footer>
 
 </body>
-</html>
+                          </html>
